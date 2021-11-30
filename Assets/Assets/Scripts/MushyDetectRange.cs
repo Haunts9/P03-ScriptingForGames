@@ -2,25 +2,14 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MushyGoldilocks : MonoBehaviour
+public class MushyDetectRange : MonoBehaviour
 {
-    public bool Gold = false;
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-    }
-
+    public bool Detect = false;
     void OnTriggerStay2D(Collider2D other)
     {
         if (other.gameObject.tag == "Cursor")
         {
-            Gold = true;
+            Detect = true;
         }
     }
 
@@ -28,7 +17,7 @@ public class MushyGoldilocks : MonoBehaviour
     {
         if (other.gameObject.tag == "Cursor")
         {
-            Gold = false;
+            Detect = false;
         }
     }
 }

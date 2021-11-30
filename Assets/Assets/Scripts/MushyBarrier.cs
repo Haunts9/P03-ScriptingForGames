@@ -14,7 +14,7 @@ public class MushyBarrier : MonoBehaviour
     void Start()
     {
         speed = Mushy.GetComponent<MushyScript>().speed;
-        Player = GameObject.FindGameObjectWithTag("Player");
+        Player = GameObject.FindGameObjectWithTag("Cursor");
     }
 
     // Update is called once per frame
@@ -26,9 +26,9 @@ public class MushyBarrier : MonoBehaviour
 
     void OnTriggerStay2D(Collider2D other)
     {
-        if (other.gameObject.tag == "Player" || other.gameObject.tag == "Mushy")
+        if ((other.gameObject.tag == "Player" || other.gameObject.tag == "Mushy") && Gold == false)
         {
-            Mushy.transform.position = Vector2.MoveTowards(Mushy.transform.position, other.gameObject.transform.position, -1 * (speed * 2) * Time.deltaTime);
+            Mushy.transform.position = Vector2.MoveTowards(Mushy.transform.position, other.gameObject.transform.position, -1 * (speed * 1.1f) * Time.deltaTime);
         }
     }
 }
