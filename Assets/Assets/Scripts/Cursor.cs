@@ -5,10 +5,12 @@ using UnityEngine;
 public class Cursor : MonoBehaviour
 {
     public Transform leader;
+    public Animator PlayerAnim;
     public GameObject detector;
     public float followSharpness = 0.1f;
     public bool inRadius = false;
     bool mbuttondown = false;
+    public bool mtoggle = false;
     Vector3 _followOffset;
     Vector3 mouseL;
 
@@ -25,13 +27,11 @@ public class Cursor : MonoBehaviour
     void LateUpdate()
     {
 
-        // Apply that offset to get a target position.
         Vector3 targetPosition = leader.position + _followOffset;
-        // Keep our y position unchanged.
 
-        // Smooth follow.
         if (Input.GetMouseButton(0))
         {
+            PlayerAnim.SetBool("Commanding", true);
             mbuttondown = true;
             float zPos = 0f;
             mouseL = Camera.main.ScreenToWorldPoint(Input.mousePosition);
@@ -40,6 +40,7 @@ public class Cursor : MonoBehaviour
         }
         else 
         {
+            PlayerAnim.SetBool("Commanding", false);
             if (inRadius == false && mbuttondown == false)
             {
                 transform.position += (targetPosition - transform.position) * (followSharpness);
@@ -48,8 +49,24 @@ public class Cursor : MonoBehaviour
         if (Input.GetMouseButtonUp(0))
         {
             mbuttondown = false;
-        }    
+        }
 
+        // Toggle
+        if (Input.GetMouseButtonDown(1))
+        {
+            PlayerAnim.SetBool("Commanding", true);
+            if (mtoggle == false)
+            {
+                mtoggle = true;
+                this.tag = "Cursor2";
+            }
+            else
+            {
+                mtoggle = false;
+                this.tag = "Cursor";
+            }
+
+        }
 
     }
 

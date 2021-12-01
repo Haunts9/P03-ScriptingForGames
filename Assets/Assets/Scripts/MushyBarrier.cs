@@ -26,7 +26,7 @@ public class MushyBarrier : MonoBehaviour
 
     void OnTriggerStay2D(Collider2D other)
     {
-        if ((other.gameObject.tag == "Player" || other.gameObject.tag == "Mushy") && Gold == false)
+        if ((other.gameObject.tag == "Player" || other.gameObject.tag == "MushyT") && Gold == false)
         {
             Mushy.transform.position = Vector2.MoveTowards(Mushy.transform.position, other.gameObject.transform.position, -1 * (speed * 1.1f) * Time.deltaTime);
         }
