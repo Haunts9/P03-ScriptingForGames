@@ -36,7 +36,7 @@ public class MushyScript : MonoBehaviour
             rb.constraints = RigidbodyConstraints2D.FreezeRotation;
             transform.position = Vector2.MoveTowards(transform.position, Cursor.transform.position, speed * Time.deltaTime);
         }
-        else if ((Gold == false && Detect == false))
+        else if ((Gold == false && Detect == false) || Freeze == true)
         {
             rb.constraints = RigidbodyConstraints2D.FreezePositionX | RigidbodyConstraints2D.FreezePositionY | RigidbodyConstraints2D.FreezeRotation;
         }

@@ -8,7 +8,7 @@ public class MushyGoldilocks : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        StartCoroutine("GoldFail");
     }
 
     // Update is called once per frame
@@ -30,5 +30,12 @@ public class MushyGoldilocks : MonoBehaviour
         {
             Gold = false;
         }
+    }
+
+    private IEnumerator GoldFail()
+    {
+        Gold = false;
+        yield return new WaitForSeconds(1f);
+        StartCoroutine("GoldFail");
     }
 }

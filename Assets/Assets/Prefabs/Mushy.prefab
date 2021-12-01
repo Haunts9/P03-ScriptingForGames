@@ -228,11 +228,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   GoldiLocks: {fileID: 888805240}
   DetectRange: {fileID: 2666829329074510447}
-  speed: 5
+  Curse: {fileID: 0}
+  speed: 8
   rb: {fileID: 2023858585626651192}
   Gold: 0
   InBar: 0
   Detect: 0
+  Freeze: 0
 --- !u!50 &2023858585626651192
 Rigidbody2D:
   serializedVersion: 4
@@ -5058,7 +5060,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 10
+  m_Radius: 8
 --- !u!114 &6030079961027141713
 MonoBehaviour:
   m_ObjectHideFlags: 0

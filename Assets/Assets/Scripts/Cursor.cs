@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Cursor : MonoBehaviour
 {
+    AudioSource cursorSound;
     public Transform leader;
     public Animator PlayerAnim;
     public GameObject detector;
@@ -16,6 +17,8 @@ public class Cursor : MonoBehaviour
 
     void Start()
     {
+        cursorSound = gameObject.GetComponent<AudioSource>();
+        cursorSound.Stop();
         // Cache the initial offset at time of load/spawn:
         _followOffset = transform.position - leader.position;
     }
@@ -26,7 +29,7 @@ public class Cursor : MonoBehaviour
     }
     void LateUpdate()
     {
-
+        playAudio();
         Vector3 targetPosition = leader.position + _followOffset;
 
         if (Input.GetMouseButton(0))
@@ -69,7 +72,17 @@ public class Cursor : MonoBehaviour
         }
 
     }
-
+    void playAudio()
+    {
+        if (mbuttondown == true)
+        {
+            cursorSound.Play();
+        }
+        else
+        {
+            cursorSound.Stop();
+        }
+    }
 
 }
 
