@@ -648,7 +648,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 7d62fd7081faa7a42b6a2e30bdb73192, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.518
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -732,6 +732,12 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!1 &782745482 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2019219972269463918, guid: 342d6598d09e34341858f991dd420716,
+    type: 3}
+  m_PrefabInstance: {fileID: 2019219972169621778}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &804815434
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1570,6 +1576,16 @@ PrefabInstance:
       propertyPath: PlayerAnim
       value: 
       objectReference: {fileID: 306717411}
+    - target: {fileID: 7265270364551878805, guid: 09ccaa963cc9faf4e8b2fe5c5e44f545,
+        type: 3}
+      propertyPath: load
+      value: 
+      objectReference: {fileID: 8300000, guid: 6989b7b3f9974594f958b3f624dfbbf5, type: 3}
+    - target: {fileID: 7265270364551878805, guid: 09ccaa963cc9faf4e8b2fe5c5e44f545,
+        type: 3}
+      propertyPath: camera1
+      value: 
+      objectReference: {fileID: 782745482}
     - target: {fileID: 7265270364551878806, guid: 09ccaa963cc9faf4e8b2fe5c5e44f545,
         type: 3}
       propertyPath: m_Name

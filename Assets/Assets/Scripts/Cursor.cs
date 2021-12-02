@@ -5,6 +5,7 @@ using UnityEngine;
 public class Cursor : MonoBehaviour
 {
     AudioSource cursorSound;
+    public GameObject camera1;
     public Transform leader;
     public Animator PlayerAnim;
     public GameObject detector;
@@ -14,6 +15,8 @@ public class Cursor : MonoBehaviour
     public bool mtoggle = false;
     Vector3 _followOffset;
     Vector3 mouseL;
+
+    public AudioClip load;
 
     void Start()
     {
@@ -57,6 +60,7 @@ public class Cursor : MonoBehaviour
         // Toggle
         if (Input.GetMouseButtonDown(1))
         {
+            AudioSource.PlayClipAtPoint(load, camera1.transform.position);
             PlayerAnim.SetBool("Commanding", true);
             if (mtoggle == false)
             {
